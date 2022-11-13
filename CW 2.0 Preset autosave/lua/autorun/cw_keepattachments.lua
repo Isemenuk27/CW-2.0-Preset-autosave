@@ -19,7 +19,7 @@ function CustomizableWeaponry.preset:loadfix(data, name_sv)
 	end
 	if not CustomizableWeaponry.preset.enabled then return end
 	local CT = CurTime()
-	if CT < self.PresetLoadDelay then return end
+	if self.PresetLoadDelay then if CT < self.PresetLoadDelay then return end end
 	if !data then return end
 	if !self.CW20Weapon then return end
 	if CLIENT then
